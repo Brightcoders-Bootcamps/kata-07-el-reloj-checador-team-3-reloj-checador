@@ -8,3 +8,5 @@
 
 Employee.create(name: 'Karina Delgado', email: 'karina@hotmail.com', position: 'QA', private_number: 123, status: 'active')
 Employee.create(name: 'Daniela Sotomayor', email: 'dany@hotmail.com', position: 'Developer', private_number: 321, status: 'active')
+Admin.create(user: 'Karina Delgado', password: '12345')
+Branch.create(name: 'HR', address: '3rd Floor')
