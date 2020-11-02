@@ -1,13 +1,16 @@
 class AdminsController < ApplicationController
-  def index
-  end
 
-  def show
-  end
+  skip_before_action :authorized, only: [:new, :create]
 
   def new
+    @admin = Admin.new
   end
 
-  def edit
+  def create
+    @admin = Admin.create(params.require(:admin).permit(:user,        
+    :password))
+    session[:admin_id] = @admin.id
+    redirect_to '/welcome'
+ 
   end
 end
