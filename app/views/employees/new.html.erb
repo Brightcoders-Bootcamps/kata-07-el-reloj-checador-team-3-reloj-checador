@@ -1,0 +1,20 @@
+<h3>New Employee</h3>
+
+<%= form_with model: @employee do |form| %>
+    <%= form.text_field :name, placeholder: "Name" %>
+    <%= form.text_field :email, placeholder: "email@email.com" %>
+    <%= form.text_field :position, placeholder: "Position" %>
+    <%= form.text_field :private_number, placeholder: "Private number" %>
+    <%= form.text_field :status, placeholder: "Status" %>
+
+    <%= form.submit %>
+  <% end %>
+  
+  <!-- <%= form_for @employee do |form| %>
+    <%= form.text_field :name, placeholder: 'Name: ' %>
+    <%= form.text_field :email, placeholder: 'Email: ' %>
+    <%= form.text_field :position, placeholder: 'Position: ' %>
+    <%= form.text_field :private_number, placeholder: 'Private number: ' %>
+    <%= form.text_field :status, placeholder: 'Status: ' %>
+    <%= form.submit %>
+  <% end %> -->
