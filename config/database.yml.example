@@ -8,7 +8,7 @@ default: &default
   adapter: postgresql
   encode: unicode
   username: admin
-  password: admin
+  password: <%= ENV['RELOJ_CHECADOR_DATABASE_PASSWORD'] %>
   port: 5432
   pool: 5
 
