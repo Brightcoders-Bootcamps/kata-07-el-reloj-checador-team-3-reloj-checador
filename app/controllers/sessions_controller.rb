@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
     @admin = Admin.find_by(user: params[:user])
     if @admin && @admin.authenticate(params[:password])
        session[:admin_id] = @admin.id
-       redirect_to '/welcome'
+       redirect_to '/welcome', success: "You have singed in successfully!"
     else
-       redirect_to '/login'
+      redirect_to '/login', danger: "Invalid username or password"
     end
  end
 
