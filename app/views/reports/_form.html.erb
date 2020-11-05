@@ -1,8 +1,9 @@
 <%= form_with(model: report, local: true) do |form| %>
   <% if report.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(report.errors.count, "error") %> prohibited this report from being saved:</h2>
-
+    <div id="error_explanation" class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <h5><%= pluralize(report.errors.count, "error") %> prohibited this check from being saved:</h5>
+      <hr>
       <ul>
         <% report.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -11,12 +12,14 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= form.label :employee_id %>
-    <%= form.text_field :employee_id, class: "form-control", placeholder: "Enter your ID" %>
-  </div>
+  <div class="d-flex flex-column align-items-center">
+    <div class="form-group text-center">
+        <%= form.label :employee_id %>
+        <%= form.telephone_field :employee_id, class: "form-control", placeholder: "Enter your ID" %>
+    </div>
 
-  <div>
-    <%= form.submit 'Check', :class => 'btn btn-primary' %>
+    <div>
+        <%= form.submit 'Check', :class => 'btn btn-primary' %>
+    </div>
   </div>
 <% end %>

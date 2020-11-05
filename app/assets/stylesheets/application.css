@@ -14,12 +14,13 @@
  *= require_self
  */
  
- .container-clock {
-     flex-direction: column;
-     align-items: center;
- }
- 
 #clock {
     max-width: 256px;
     max-height: 256px;
+}
+
+#error_explanation {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
 }
