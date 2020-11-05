@@ -11,6 +11,6 @@ class AdminsController < ApplicationController
     :password))
     session[:admin_id] = @admin.id
     redirect_to '/welcome'
- 
+    
   end
 end
