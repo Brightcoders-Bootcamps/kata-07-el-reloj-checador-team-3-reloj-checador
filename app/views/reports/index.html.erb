@@ -1,13 +1,11 @@
-<div class="container">
+<div class="container mt-5">
+  <%# <button type="button" class="btn btn-primary">New Check</button> %>
   <div class="row">
-    <%# <button type="button" class="btn btn-primary">New Check</button> %>
-    <%= link_to "New Check", new_report_path, class: "btn btn-primary"%>
-    <% @reports.each do |report| %>
-      <ul class="list-group list-group-horizontal">
-        <li class="list-group-item"><%= report.employee_id %></li>
-        <li class="list-group-item"><%= report.check_type %></li>
-        <li class="list-group-item"><%= report.check_time %></li>
-      </ul>
-    <% end %>
+    <div class="col">
+      <%= render 'log', reports: @reports %>
+    </div>
+    <div class="col-4">
+      <%= link_to "Employee Registration", new_report_path, class: "btn btn-primary"%>
+    </div>
   </div>
 </div>
