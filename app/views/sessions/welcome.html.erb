@@ -1,4 +1,3 @@
-
 <% if logged_in? %>
   <div class="jumbotron text-center" style="margin-bottom:0">
     <h1>Welcome, <%= current_admin.user %>!</h1> 
@@ -22,7 +21,6 @@
         </li> 
         <li class="nav-item">
           <a class="nav-link", <%= link_to "Log out",:controller=> "sessions", :action=> "destroy"%></a> 
-          
         </li>    
       </ul>
     </div>  
@@ -30,15 +28,10 @@
 <%end%>
 
 
-<!-- Full Page Intro -->
-<div class="view img-fluid welcome_img" style="background-image: url('https://bit.ly/34XuUBR'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-  <!-- Mask & flexbox options-->
+<div class="view img-fluid h-100" style="background-image: url('https://bit.ly/34XuUBR'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
   <div class="mask rgba-gradient align-items-center">
-    <!-- Content -->
     <div class="container">
-      <!--Grid row-->
       <div class="row">
-        <!--Grid column-->
         <div class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5 wow fadeInLeft" data-wow-delay="0.3s">
           <h1 class="h1-responsive font-weight-bold mt-sm-5">Make purchases with our app </h1>
           <hr class="hr-light">
@@ -49,23 +42,7 @@
           <a class="btn btn-info" href="/login">Log In</a>
           <%end%>
         </div>
-        <!--Grid column-->
-        <!--Grid column-->
-        
-        <!--Grid column-->
       </div>
-      <!--Grid row-->
     </div>
-    <!-- Content -->
   </div>
-  <!-- Mask & flexbox options-->
 </div>
-<!-- Full Page Intro -->
-   
-
-
-
-
-
- 
->>>>>>> c709dac... Main page admin view
