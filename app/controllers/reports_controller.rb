@@ -15,7 +15,6 @@ class ReportsController < ApplicationController
 
   def create
     related_employee = Employee.find_by(private_number: params["report"]["private_number"].to_i)
-    # binding.irb
     @report = Report.new
     @report.employee =  related_employee
 
