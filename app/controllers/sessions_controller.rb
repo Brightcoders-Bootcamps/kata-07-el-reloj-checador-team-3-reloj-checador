@@ -8,12 +8,12 @@ class SessionsController < ApplicationController
   def create
     @admin = Admin.find_by(user: params[:user])
     if @admin && @admin.authenticate(params[:password])
-       session[:admin_id] = @admin.id
-       redirect_to '/welcome', success: "You have singed in successfully!"
+        session[:admin_id] = @admin.id
+        redirect_to '/welcome', success: "You have singed in successfully!"
     else
       redirect_to '/login', danger: "Invalid username or password"
     end
- end
+  end
 
   def welcome
   end
