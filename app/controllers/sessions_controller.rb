@@ -15,6 +15,12 @@ class SessionsController < ApplicationController
     end
  end
 
+<<<<<<< HEAD
+=======
+  def login
+  end
+
+>>>>>>> b22034afac8950255d439fb4fb96f62d8715ca43
   def welcome
   end
 
