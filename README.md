@@ -81,6 +81,9 @@ The attendance web app must meet the following reuqirements:
 En [este elnace](setup/README.md) se describen los pasos necesarios para ejecutar/probar este proyecto, así como los integrantes de este equipo
 
 ## Enlaces
+
+[Enlace del proyecto en Heroku](https://el-reloj-checador.herokuapp.com)
+
 [Encuentra aquí una lista completa de recursos de ayuda](https://github.com/bright-coders/commons/tree/master/topics/resources)
 
 # Feature 7 Branch
