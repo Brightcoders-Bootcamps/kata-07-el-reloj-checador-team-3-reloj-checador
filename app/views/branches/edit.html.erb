@@ -1,2 +1,9 @@
-<h1>Branches#edit</h1>
-<p>Find me in app/views/branches/edit.html.erb</p>
+<h3>Update Branch</h3>
+<%= form_with model: @branch do |form| %>
+    <%= form.text_field :name, placeholder: "name" %>
+    <%= form.text_field :address, placeholder: "address" %>
+    <!--<td><%= button_to 'Desactivate', branch_path(@branch), remote: true, method: :post , data: { confirm: 'Are you sure?' } %></td>-->
+    <%= form.check_box :active %>
+    <%= form.submit%>
+  <% end %>
+  

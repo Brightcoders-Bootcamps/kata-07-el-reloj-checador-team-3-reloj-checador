@@ -8,6 +8,7 @@
 
 Employee.create(name: 'Karina Delgado', email: 'karina@hotmail.com', position: 'QA', private_number: 123, status: 'active')
 Employee.create(name: 'Daniela Sotomayor', email: 'dany@hotmail.com', position: 'Developer', private_number: 321, status: 'active')
-Admin.create(user: 'Karina Delgado', password: '12345')
+Admin.create(user: 'admin', password: 'admin')
 Branch.create(name: 'HR', address: '3rd Floor')
-Report.create(check_type: "check in", check_time: "2016-11-01 17:00:13", employee_id: "1")
+Branch.create(name: 'HR2', address: '4th Floor')
+Report.create(check_type: "check_in", check_time: "2016-11-01 17:00:13", employee_id: "1")
