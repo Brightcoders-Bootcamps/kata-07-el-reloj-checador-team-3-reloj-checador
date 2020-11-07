@@ -3,7 +3,8 @@
     <%= form.text_field :name, placeholder: "name" %>
     <%= form.text_field :address, placeholder: "address" %>
     <!--<td><%= button_to 'Desactivate', branch_path(@branch), remote: true, method: :post , data: { confirm: 'Are you sure?' } %></td>-->
-    <%= form.check_box :active %>
+    <%= label_tag 'status', 'Branch active:'%>
+    <%= form.check_box :status %>
     <%= form.submit%>
   <% end %>
   

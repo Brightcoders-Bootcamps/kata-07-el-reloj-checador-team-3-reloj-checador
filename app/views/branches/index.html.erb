@@ -2,9 +2,11 @@
 
 <table>
   <% @branches.each do |branch| %>
+  <% if branch.status %>
     <tr>
       <td><%= link_to branch.name, branch_path(branch) %></td>
       <td><%= button_to 'Edit', edit_branch_path(branch), method: 'get'%></td>
+  <% end %>
   <% end %>
 </table>
 <%= link_to "Add a New Branch", new_branch_path %>

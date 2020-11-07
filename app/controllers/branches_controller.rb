@@ -62,7 +62,7 @@ class BranchesController < ApplicationController
   private
 
   def branch_params
-    params.require(:branch).permit(:name, :address)
+    params.require(:branch).permit(:name, :address, :status)
   end
 
   def current_branch
