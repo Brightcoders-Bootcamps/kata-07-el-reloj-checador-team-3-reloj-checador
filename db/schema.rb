@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_11_02_021904) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "status", default: true
   end
 
   create_table "employees", force: :cascade do |t|
