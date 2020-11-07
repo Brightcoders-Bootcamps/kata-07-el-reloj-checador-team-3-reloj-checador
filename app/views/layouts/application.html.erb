@@ -19,6 +19,8 @@
   </head>
 
   <body>
+    <%= render "shared/header" %>
+
     <% flash.each do |user, msg| %>
       <div class='alert alert-<%= user %>'>
         <%= msg %>
