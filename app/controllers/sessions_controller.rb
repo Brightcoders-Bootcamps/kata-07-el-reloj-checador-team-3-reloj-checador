@@ -19,9 +19,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy      
-   session[:admin_id] = nil     
-   redirect_to '/welcome' 
- end  
+  session[:admin_id] = nil     
+  redirect_to '/welcome' 
+  end  
 
   def page_requires_login
   end
