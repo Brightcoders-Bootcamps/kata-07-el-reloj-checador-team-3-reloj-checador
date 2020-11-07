@@ -1,0 +1,26 @@
+<%= form_with(model: report, local: true) do |form| %>
+  <% if report.errors.any? %>
+    <div id="error_explanation" class="alert alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <h5><%= pluralize(report.errors.count, "error") %> prohibited this check from being saved:</h5>
+      <hr>
+      <ul>
+        <% report.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="d-flex flex-column align-items-center">
+    <div class="form-group text-center">
+      <%= form.label :private_number %>
+      <%= form.telephone_field :private_number, :class => "form-control", placeholder: "Enter your private number" %>
+    </div>
+
+    <div>
+      <%= form.submit 'Check-in', :class => 'btn btn-primary btn-lg' %>
+      <%= form.submit 'Check-out', :class => 'btn btn-info btn-lg' %>
+    </div>
+  </div>
+<% end %>

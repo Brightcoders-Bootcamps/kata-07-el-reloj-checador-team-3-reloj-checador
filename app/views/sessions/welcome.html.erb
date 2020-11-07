@@ -1,0 +1,27 @@
+<% if logged_in? %>
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <h1 class="display-4">Welcome, <%= current_admin.user %>!</h1> 
+  </div>
+<%end%>
+
+<div>
+  <style>
+    body {
+      background-image: url('https://bit.ly/34XuUBR');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+        }
+  </style>
+</div>
+
+
+<% if logged_in? == false %>
+
+<div class="jumbotron text-center align-items-center" style="margin-bottom:0">
+    <h1 class="display-4">Welcome</h1> 
+    <p>Please log in!</p>
+    <a class="btn btn-info" href="/login">Log In</a>
+</div>
+<%end%>
+

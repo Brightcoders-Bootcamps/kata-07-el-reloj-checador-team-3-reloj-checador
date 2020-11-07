@@ -1,6 +1,5 @@
 class BranchesController < ApplicationController
   before_action :current_branch, only: [:show, :edit, :update]
-
   def index
     @branches = Branch.all
   end

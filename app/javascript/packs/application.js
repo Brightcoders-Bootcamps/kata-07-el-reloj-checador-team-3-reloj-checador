@@ -15,3 +15,11 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+//= require rails-ujs
+//= require turbolinks
+//= require_tree .
+//= require jquery3
+//= require dataTables/jquery.dataTables
+//= require popper
+//= require bootstrap

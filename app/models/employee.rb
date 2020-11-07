@@ -1,4 +1,4 @@
 class Employee < ApplicationRecord
-has_many :report_id
-enum status: [:active, :inactive]
+  has_many :reports
+  enum status: [:active, :inactive]
 end
