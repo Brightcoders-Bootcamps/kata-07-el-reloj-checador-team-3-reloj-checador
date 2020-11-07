@@ -20,5 +20,6 @@ require("channels")
 //= require turbolinks
 //= require_tree .
 //= require jquery3
+//= require dataTables/jquery.dataTables
 //= require popper
 //= require bootstrap
