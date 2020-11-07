@@ -33,15 +33,14 @@ ActiveRecord::Schema.define(version: 2020_11_02_021904) do
     t.string "name"
     t.string "email"
     t.string "position"
-    t.string "private_number"
+    t.integer "private_number"
     t.string "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "reports", force: :cascade do |t|
-    t.string "check_type"
-    t.datetime "check_time"
+    t.string "check"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "employee_id"
