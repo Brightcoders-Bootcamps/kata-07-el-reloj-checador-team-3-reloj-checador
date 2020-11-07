@@ -1,10 +1,23 @@
 <h3>Check Log</h3>
-<% @reports.each do |report| %>
-  <% related_employee = Employee.find(report.employee_id) %>
-  <ul class="list-group list-group-horizontal">
-    <li class="list-group-item"><%= related_employee.private_number %></li>
-    <li class="list-group-item"><%= related_employee.name %></li>
-    <li class="list-group-item"><%= report.check %></li>
-    <li class="list-group-item"><%= report.created_at.strftime("%m/%d/%Y at %I:%M %p") %></li>
-  </ul>
-<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Private #</th>
+      <th scope="col">Name</th>
+      <th scope="col">Check</th>
+      <th scope="col">Time</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reports.each do |report| %>
+      <% related_employee = Employee.find(report.employee_id) %>
+      <tr>
+        <th scope="row"><%= related_employee.private_number %></th>
+        <td><%= related_employee.name %></td>
+        <td><%= report.check %></td>
+        <td><%= report.created_at.strftime("%m/%d/%Y at %I:%M %p") %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
