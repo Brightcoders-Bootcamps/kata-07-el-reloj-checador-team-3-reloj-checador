@@ -24,6 +24,20 @@
         <%= msg %>
       </div>
     <%end%>
+    
+    <% if notice.present? %>
+    <div class="alert alert-success notif">
+      <button type="button" class="close ml-3" data-dismiss="alert">&times;</button>
+      <%= notice %>
+    </div>
+    <% end %>
+    <% if alert.present? %>
+    <div class="alert alert-danger notif">
+      <button type="button" class="close ml-3" data-dismiss="alert">&times;</button>
+      <%= alert %>
+    </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

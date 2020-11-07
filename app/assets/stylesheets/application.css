@@ -13,7 +13,17 @@
  *= require_tree .
  *= require_self
  */
- 
+
+.alert-notice{
+    display: none;
+}
+
+.notif {
+    position: absolute !important;
+    right: 1rem;
+    top: 1rem;
+}
+
 #clock {
     max-width: 256px;
     max-height: 256px;
