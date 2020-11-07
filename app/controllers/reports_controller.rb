@@ -18,9 +18,9 @@ class ReportsController < ApplicationController
     @report = Report.new
 
     if params[:commit] == 'Check-in'
-      @report.check = 'check in'
+      @report.check = 'Check in'
     elsif params[:commit] == 'Check-out'
-      @report.check = 'check out'
+      @report.check = 'Check out'
     end
     @report.employee =  related_employee
     
