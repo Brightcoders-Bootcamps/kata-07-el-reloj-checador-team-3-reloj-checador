@@ -2,26 +2,6 @@
 <h1>Branch Information</h1>
 </div>
 
-<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="welcome">Main</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="collapsibleNavbar">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="employees#show">Employees</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="branches#show">Branches</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="reports#show">Reports</a>
-      </li>    
-    </ul>
-  </div>  
-</nav>
-
 <h2><%= @branch.name %></h2>
 <h4>Position: <%= @branch.address %></h4>
 <h4>Active: <%= @branch.status %></h4>
