@@ -2,24 +2,35 @@
 <h1>Employees</h1>
 </div>
 
-
-<table id="employees" class="display">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Status</th>
-  </tr>
-</thead>
-<tbody>
-  <% @employees.each do |employee| %>
-    <tr>
-      <td><%= link_to employee.name, employee_path(employee) %></td>
-      <td><%= employee.status %></td>
-      <td><%= button_to 'Edit', edit_employee_path(employee), method: 'get'%></td>
-    </tr>
-  <% end %>
+<div class="container mt-5">
+<div class="row">
+<div class="col">
+  <table id="employees" class="display table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Status</th>
+        <th scope="col">Edit</th>
+      </tr>
+  </thead>
   <tbody>
-</table>
-
-<%= link_to "Add a New Employee", new_employee_path %>
+    <% @employees.each do |employee| %>
+      <tr>
+        <td><%= link_to employee.name, employee_path(employee) %></td>
+        <% if employee.status =="t"%>
+        <td>Active</td>
+        <% else %>
+        <td>Disabled</td> 
+        <%end%>
+        <td><%= button_to 'Edit', edit_employee_path(employee), method: 'get', :class => "btn btn-primary"%></td>
+      </tr>
+    <% end %>
+    <tbody>
+  </table>
+  </div>
+  <div class="col-4">
+  <%= link_to "Add a New Employee", new_employee_path, :class => "btn btn-primary"%>
+  </div>
+  </div>
+  </div>
 
