@@ -48,14 +48,17 @@ class BranchesController < ApplicationController
     end 
   end
 
-  def desactivate
-    #@branch.toggle! :active
-    #@branch.update(active: !branch.active?)
-    # if @branch.active?
-    #   @branch.update(active: false)
-    # else
-    #   @branch.update(active: true)
-    # end
+  def destroy
+    @branch = Branch.find(params[:id])
+    # @branch.destroy
+
+    # redirect_to branches_path
+
+    @branch.destroy
+    respond_to do |format|
+      format.html { redirect_to branches_url, notice: 'Branch was successfully deleted.' }
+      format.json { head :no_content }
+    end
   end
   
   private
