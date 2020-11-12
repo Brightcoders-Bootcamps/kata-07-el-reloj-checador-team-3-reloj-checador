@@ -17,13 +17,13 @@
     <% @branches.each do |branch| %>
       <tr>
         <td><%= link_to branch.name, branch_path(branch) %></td>
-        <td><%= button_to 'Edit', edit_branch_path(branch), method: 'get', :class => "btn btn-primary"%></td>
-        <td><%= button_to 'Delete', branch_path(branch), method: 'delete', :class => "btn btn-primary"%></td>
+        <td><%= button_to 'Edit', edit_branch_path(branch), method: 'get', class: 'btn btn-primary' %></td>
+        <td><%= button_to 'Delete', branch_path(branch), method: 'delete', class: 'btn btn-primary' %></td>
       </tr>
     <% end %>
    <tbody>
   </table>
 </div>
 <div class = "col-4">
-<%= link_to "Add a New Branch", new_branch_path, :class => "btn btn-primary" %>
+<%= link_to "Add a New Branch", new_branch_path, class: 'btn btn-primary' %>
 </div>
