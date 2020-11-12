@@ -11,12 +11,6 @@ class BranchesController < ApplicationController
     @branch = Branch.new
   end
 
-  # def create
-  #   branch = Branch.create(branch_params)
-
-  #   redirect_to branches_path
-  # end
-
   def create 
       @branch = Branch.new(branch_params) 
       respond_to do |format| 
@@ -32,11 +26,6 @@ class BranchesController < ApplicationController
   def edit
   end
 
-  # def update
-  #   @branch.update(branch_params)
-
-  #   redirect_to branch_path(@branch)
-  # end
 
   def update 
     respond_to do |format| 
@@ -50,9 +39,6 @@ class BranchesController < ApplicationController
 
   def destroy
     @branch = Branch.find(params[:id])
-    # @branch.destroy
-
-    # redirect_to branches_path
 
     @branch.destroy
     respond_to do |format|
