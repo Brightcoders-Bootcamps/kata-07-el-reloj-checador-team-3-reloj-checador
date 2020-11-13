@@ -14,12 +14,10 @@
   </thead>
   <tbody>
     <% @branches.each do |branch| %>
-      <% if branch.status %>
-        <tr>
-          <td><%= link_to branch.name, branch_path(branch) %></td>
-          <td><%= button_to 'Edit', edit_branch_path(branch), method: 'get', :class => "btn btn-primary"%></td>
-        </tr>
-      <% end %>
+      <tr>
+        <td><%= link_to branch.name, branch_path(branch) %></td>
+        <td><%= button_to 'Edit', edit_branch_path(branch), method: 'get', :class => "btn btn-primary"%></td>
+      </tr>
     <% end %>
    <tbody>
   </table>
