@@ -11,12 +11,6 @@ class BranchesController < ApplicationController
     @branch = Branch.new
   end
 
-  # def create
-  #   branch = Branch.create(branch_params)
-
-  #   redirect_to branches_path
-  # end
-
   def create 
       @branch = Branch.new(branch_params) 
       respond_to do |format| 
@@ -32,11 +26,6 @@ class BranchesController < ApplicationController
   def edit
   end
 
-  # def update
-  #   @branch.update(branch_params)
-
-  #   redirect_to branch_path(@branch)
-  # end
 
   def update 
     respond_to do |format| 
@@ -48,20 +37,20 @@ class BranchesController < ApplicationController
     end 
   end
 
-  def desactivate
-    #@branch.toggle! :active
-    #@branch.update(active: !branch.active?)
-    # if @branch.active?
-    #   @branch.update(active: false)
-    # else
-    #   @branch.update(active: true)
-    # end
+  def destroy
+    @branch = Branch.find(params[:id])
+
+    @branch.destroy
+    respond_to do |format|
+      format.html { redirect_to branches_url, notice: 'Branch was successfully deleted.' }
+      format.json { head :no_content }
+    end
   end
   
   private
 
   def branch_params
-    params.require(:branch).permit(:name, :address, :status)
+    params.require(:branch).permit(:name, :address)
   end
 
   def current_branch
