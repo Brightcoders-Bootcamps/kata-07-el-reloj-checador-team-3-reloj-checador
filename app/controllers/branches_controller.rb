@@ -11,12 +11,6 @@ class BranchesController < ApplicationController
     @branch = Branch.new
   end
 
-  # def create
-  #   branch = Branch.create(branch_params)
-
-  #   redirect_to branches_path
-  # end
-
   def create 
       @branch = Branch.new(branch_params) 
       respond_to do |format| 
@@ -32,12 +26,6 @@ class BranchesController < ApplicationController
   def edit
   end
 
-  # def update
-  #   @branch.update(branch_params)
-
-  #   redirect_to branch_path(@branch)
-  # end
-
   def update 
     respond_to do |format| 
       if @branch.update(branch_params) 
@@ -46,16 +34,6 @@ class BranchesController < ApplicationController
         format.html { render :edit } 
       end 
     end 
-  end
-
-  def desactivate
-    #@branch.toggle! :active
-    #@branch.update(active: !branch.active?)
-    # if @branch.active?
-    #   @branch.update(active: false)
-    # else
-    #   @branch.update(active: true)
-    # end
   end
   
   private
