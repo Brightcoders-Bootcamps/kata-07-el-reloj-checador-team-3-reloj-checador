@@ -16,7 +16,7 @@ class EmployeesController < ApplicationController
   def create
     employee = Employee.create(employee_params)
 
-    redirect_to employees_path
+    redirect_to employees_path, notice: "Employee was successfully created."
   end
 
   def edit
@@ -24,8 +24,7 @@ class EmployeesController < ApplicationController
 
   def update
     @employee.update(employee_params)
-
-    redirect_to employee_path(@employee)
+    redirect_to employee_path(@employee), info: "Employee was successfully updated." 
   end
 
   private

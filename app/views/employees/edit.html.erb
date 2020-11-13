@@ -2,6 +2,12 @@
 <h3>Update Employee</h3>
 </div>
 
+<p id="info"><%= info %></p>
+<% if info.present? %> 
+  <div class="notification is-link is-light">
+  <%= info %></div> 
+<% end %>
+
 <div class="container p-3 my-3 border">
   <%= form_with model: @employee do |form| %>
     <div class="form-group">
