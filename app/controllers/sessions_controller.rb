@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
   def create
     @admin = Admin.find_by(user: params[:user])
-    if @admin && @admin.authenticate(params[:password])
+    if @admin || @admin.authenticate(params[:password])
         session[:admin_id] = @admin.id
         redirect_to '/welcome', success: "You have singed in successfully!"
     else
@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy      
   session[:admin_id] = nil     
-  redirect_to '/welcome' 
+  redirect_to root_url, notice: 'Goodbye!' 
   end  
 
   def page_requires_login

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root 'sessions#welcome'
+
   resources :employees
   resources :branches
   resources :reports
