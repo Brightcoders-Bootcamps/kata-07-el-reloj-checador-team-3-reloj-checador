@@ -17,7 +17,7 @@
     <% @employees.each do |employee| %>
       <tr>
         <td><%= link_to employee.name, employee_path(employee) %></td>
-        <% if employee.status =="t"%>
+       <% if employee.status == true%>
         <td>Active</td>
         <% else %>
         <td>Disabled</td> 
