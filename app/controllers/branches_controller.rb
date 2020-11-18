@@ -35,11 +35,21 @@ class BranchesController < ApplicationController
       end 
     end 
   end
+
+  def destroy
+    @branch = Branch.find(params[:id])
+
+    @branch.destroy
+    respond_to do |format|
+      format.html { redirect_to branches_url, notice: 'Branch was successfully deleted.' }
+      format.json { head :no_content }
+    end
+  end
   
   private
 
   def branch_params
-    params.require(:branch).permit(:name, :address, :status)
+    params.require(:branch).permit(:name, :address)
   end
 
   def current_branch

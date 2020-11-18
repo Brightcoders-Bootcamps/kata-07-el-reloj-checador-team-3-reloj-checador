@@ -2,19 +2,6 @@
 <h1>Update Branch</h1>
 </div>
 
-<% if @branch.errors.any? %> 
-  <div id="error_explanation" class="alert alert-danger"> 
-    <button type="button" class="close" data-dismiss="alert">&times;</button> 
-    <h5><%= pluralize(@branch.errors.count, "error") %> prohibited this check from being saved:</h5>  
-    <hr> 
-    <ul> 
-      <% @branch.errors.full_messages.each do |message| %> 
-        <li><%= message %></li> 
-      <% end %> 
-    </ul> 
-    </div> 
-<% end %>
-
 <div class="container p-3 my-3 border">
     <%= form_with model: @branch do |form| %>
     <div class="form-group">
