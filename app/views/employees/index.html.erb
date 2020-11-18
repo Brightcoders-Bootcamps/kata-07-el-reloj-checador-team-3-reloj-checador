@@ -20,7 +20,7 @@
        <% if employee.status == true%>
         <td>Active</td>
         <% else %>
-        <td>Disabled</td> 
+        <td>Inactive</td> 
         <%end%>
         <td><%= button_to 'Edit', edit_employee_path(employee), method: 'get', :class => "btn btn-primary"%></td>
       </tr>
