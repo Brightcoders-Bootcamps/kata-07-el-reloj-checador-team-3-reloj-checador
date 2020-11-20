@@ -21,7 +21,7 @@
 
     <div class="form-group">
         <%= label_tag 'private_number', 'Private Number:'%>
-        <%= form.text_field :private_number, class:'form-control'%>
+        <%= form.text_field :private_number, class:'form-control', value: @private_number, disabled: true%>
     </div>
 
     <%= submit_tag "Add Employee", class:"btn btn-outline-success"%>

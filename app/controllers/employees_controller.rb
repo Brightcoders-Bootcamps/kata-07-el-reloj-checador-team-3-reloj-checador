@@ -11,6 +11,10 @@ class EmployeesController < ApplicationController
 
   def new
     @employee = Employee.new
+    @private_number = rand(111111..999999)
+    if Employee.exists?(private_number: @private_number)
+      @private_number = rand(111111..999999)
+    end
   end
 
   def create
