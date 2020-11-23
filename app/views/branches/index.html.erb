@@ -1,29 +1,31 @@
 <div class="jumbotron text-center" style="margin-bottom:0">
-<h1>Branches</h1>
+  <h1>Branches</h1>
 </div>
 
 <div class="container mt-5">
-<div class="row">
-<div class="col">
-  <table id="employees" class="display table table-hover">
-    <thead>
-      <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Edit</th>
-        <th scope="col">Delete</th>
-      </tr>
-  </thead>
-  <tbody>
-    <% @branches.each do |branch| %>
-      <tr>
-        <td><%= link_to branch.name, branch_path(branch) %></td>
-        <td><%= button_to 'Edit', edit_branch_path(branch), method: 'get', class: 'btn btn-primary' %></td>
-        <td><%= button_to 'Delete', branch_path(branch), method: 'delete', class: 'btn btn-primary' %></td>
-      </tr>
-    <% end %>
-   <tbody>
-  </table>
-</div>
-<div class = "col-4">
-<%= link_to "Add a New Branch", new_branch_path, class: 'btn btn-primary' %>
+  <div class="row">
+    <div class="col">
+      <table id="employees" class="display table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @branches.each do |branch| %>
+            <tr>
+              <td><%= link_to branch.name, branch_path(branch) %></td>
+              <td><%= button_to 'Edit', edit_branch_path(branch), method: 'get', class: 'btn btn-primary' %></td>
+              <td><%= button_to 'Delete', branch_path(branch), method: 'delete', class: 'btn btn-primary' %></td>
+            </tr>
+          <% end %>
+          <tbody>
+      </table>
+    </div>
+    <div class = "col-4">
+      <%= link_to "Add a New Branch", new_branch_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
 </div>
