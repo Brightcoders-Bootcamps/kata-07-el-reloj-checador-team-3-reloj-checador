@@ -16,11 +16,11 @@
   <tbody>
     <% @employees.each do |employee| %>
       <tr>
-        <td><%= link_to employee.name, employee_path(employee) %></td>
-       <% if employee.status == true%>
-        <td>Active</td>
-        <% else %>
-        <td>Inactive</td> 
+        <td><%= link_to employee.name, employee_path(employee)%></td>
+        <%if employee.status == true%>
+          <td>Active</td>
+        <%else%>
+          <td>Inactive</td> 
         <%end%>
         <td><%= button_to 'Edit', edit_employee_path(employee), method: 'get', :class => "btn btn-primary"%></td>
       </tr>
