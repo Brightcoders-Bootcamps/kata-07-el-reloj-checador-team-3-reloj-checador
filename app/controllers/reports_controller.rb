@@ -32,4 +32,8 @@ class ReportsController < ApplicationController
       end
     end
   end
+
+  def attendance
+    @dates = Report.all.pluck("distinct date(created_at)")
+  end
 end
