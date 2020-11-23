@@ -14,11 +14,11 @@
  *= require_self
  */
 
-.alert-notice{
+.alert-notice {
     display: none;
 }
 
-.alert-info{
+.alert-info {
     display: none;
 }
 
