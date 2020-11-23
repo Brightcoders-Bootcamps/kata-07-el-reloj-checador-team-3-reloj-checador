@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'sessions#welcome'
+  root to: 'sessions#new'
 
   resources :employees
   resources :branches
