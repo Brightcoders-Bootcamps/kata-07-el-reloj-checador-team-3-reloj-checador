@@ -16,13 +16,13 @@ class EmployeesController < ApplicationController
   def create
       @employee = Employee.new(employee_params) 
       respond_to do |format| 
-      if @employee.save 
-        format.html { redirect_to employees_url, notice: 'Employee was successfully created.' } 
-      else 
-        format.html { render :new } 
-      end 
+        if @employee.save
+          format.html { redirect_to employees_url, notice: 'Employee was successfully created.' }
+        else
+          format.html { render :new }
+        end
+      end
     end
-  end
 
   def edit
   end
