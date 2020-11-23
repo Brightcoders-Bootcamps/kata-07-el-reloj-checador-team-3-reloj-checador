@@ -1,7 +1,6 @@
 class EmployeesController < ApplicationController
 
   before_action :current_employee, only: [:show, :edit, :update]
-  before_action :validate_private_num, only: [:create]
 
   def index
     @employees = Employee.all
@@ -20,7 +19,7 @@ class EmployeesController < ApplicationController
       @employee.save!
       redirect_to employees_path
     else 
-      redirect_to new_employee_path, alert: 'Private number already exist'
+      redirect_to new_employee_path, alert: 'Verify all the fields'
     end
   end
 
@@ -46,12 +45,4 @@ class EmployeesController < ApplicationController
   def current_employee
     @employee = Employee.find(params[:id])
   end
-
-  def validate_private_num
-    @pnumber = params[:private_number]
-    if Employee.exists?(private_number: @pnumber) == true 
-      flash[:alert] = "Private number already exist"
-    end
-  end
-
 end
