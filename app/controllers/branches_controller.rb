@@ -29,7 +29,7 @@ class BranchesController < ApplicationController
   def update 
     respond_to do |format| 
       if @branch.update(branch_params) 
-        format.html { redirect_to branches_url, notice: 'Branch was successfully updated.' } 
+        format.html { redirect_to branches_url, info: 'Branch was successfully updated.' } 
       else 
         format.html { render :edit } 
       end 
