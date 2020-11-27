@@ -14,18 +14,27 @@ class EmployeesController < ApplicationController
   end
 
   def create
-    employee = Employee.create(employee_params)
-
-    redirect_to employees_path
-  end
+      @employee = Employee.new(employee_params) 
+      respond_to do |format| 
+        if @employee.save
+          format.html { redirect_to employees_url, notice: 'Employee was successfully created.' }
+        else
+          format.html { render :new }
+        end
+      end
+    end
 
   def edit
   end
 
   def update
-    @employee.update(employee_params)
-
-    redirect_to employee_path(@employee)
+    respond_to do |format| 
+      if @employee.update(employee_params) 
+        format.html { redirect_to employees_url, info: 'Employee was successfully updated.' } 
+      else 
+        format.html { render :edit } 
+      end 
+    end 
   end
 
   private

@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
 
   def destroy      
     session[:admin_id] = nil     
-    redirect_to '/welcome' 
+    redirect_to root_url, notice: 'Goodbye!' 
   end  
 
   def page_requires_login

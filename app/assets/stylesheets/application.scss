@@ -14,10 +14,11 @@
  *= require_self
  */
 
-/*Importing Bootstrap for components styles*/
- @import "bootstrap";
+.alert-notice {
+    display: none;
+}
 
-.alert-notice{
+.alert-info {
     display: none;
 }
 
