@@ -1,0 +1,42 @@
+<div class="container-fluid py-5">
+  <h2 class="mb-4">Attendance by day</h2>
+  <div class="row px-5">
+    <div class="col-5">
+      <h4>Please, select a day</h4>
+      <% @dates.each do |date| %>
+      <%= link_to date.strftime("%m-%d-%Y"), attendance_path(date: date), :class => 'btn btn-primary' %>
+      <% end %>
+    </div>
+    <div class="col-7">
+      <h4>Log of the day</h4>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Private #</th>
+            <th scope="col">Name</th>
+            <th scope="col">Check</th>
+            <%
+=begin%>
+ <th scope="col">Time</th> 
+<%
+=end%>
+          </tr>
+        </thead>
+        <tbody>
+          <% @filtered_reports&.each do |report|%>
+            <tr>
+              <th scope="row"><%= report.employee.private_number %></th>
+              <td><%= report.employee.name %></td>
+              <td><%= report.check %></td>
+              <%
+=begin%>
+ <td><%= report.created_at.strftime("%m/%d/%Y at %I:%M %p") %></td> 
+<%
+=end%>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
