@@ -26,7 +26,6 @@ class BranchesController < ApplicationController
   def edit
   end
 
-
   def update 
     respond_to do |format| 
       if @branch.update(branch_params) 
