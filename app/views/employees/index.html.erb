@@ -12,19 +12,19 @@
             <th scope="col">Status</th>
             <th scope="col">Edit</th>
           </tr>
-      </thead>
-      <tbody>
-      <% @employees.each do |employee| %>
-        <tr>
-          <td><%= link_to employee.name, employee_path(employee) %></td>
-          <% if employee.status =="t"%>
-            <td>Active</td>
-          <% else %>
-            <td>Disabled</td> 
-          <%end%>
-          <td><%= button_to 'Edit', edit_employee_path(employee), method: 'get', :class => "btn btn-primary"%></td>
-          </tr>
-        <% end %>
+        </thead>
+        <tbody>
+          <% @employees.each do |employee| %>
+            <tr>
+              <td><%= link_to employee.name, employee_path(employee)%></td>
+              <%if employee.status == true%>
+                <td>Active</td>
+              <%else%>
+                <td>Inactive</td> 
+              <%end%>
+              <td><%= button_to 'Edit', edit_employee_path(employee), method: 'get', :class => "btn btn-primary"%></td>
+            </tr>
+          <% end %>
         <tbody>
       </table>
     </div>
@@ -33,4 +33,3 @@
     </div>
   </div>
 </div>
-
