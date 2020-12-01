@@ -27,13 +27,16 @@ ActiveRecord::Schema.define(version: 2020_11_30_195654) do
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "status", default: true
   end
 
   create_table "employees", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "position"
+<<<<<<< HEAD
+=======
+    t.integer "private_number"
+>>>>>>> 7a0f3000b243c4f7c5373bb3968c353e105b09ca
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "status", default: true
