@@ -14,11 +14,11 @@ class BranchesController < ApplicationController
   def create 
       @branch = Branch.new(branch_params) 
       respond_to do |format| 
-      if @branch.save 
-        format.html { redirect_to branches_url, notice: 'Branch was successfully created.' } 
-      else 
-        format.html { render :new } 
-      end 
+        if @branch.save 
+          format.html { redirect_to branches_url, notice: 'Branch was successfully created.' } 
+        else 
+          format.html { render :new } 
+        end 
     end
   end 
 
