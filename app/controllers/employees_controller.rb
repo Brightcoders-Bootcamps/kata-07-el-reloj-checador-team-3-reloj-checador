@@ -14,15 +14,14 @@ class EmployeesController < ApplicationController
   end
 
   def create
-      @employee = Employee.new(employee_params) 
-      respond_to do |format| 
-        if @employee.save
-          format.html { redirect_to employees_url, notice: 'Employee was successfully created.' }
-        else
-          format.html { render :new }
-        end
-      end
+    @employee = Employee.new(employee_params)
+    if @employee.valid? 
+      @employee.save!
+      redirect_to employees_path
+    else 
+      redirect_to new_employee_path, alert: 'Verify all the fields'
     end
+  end
 
   def edit
   end
@@ -30,7 +29,7 @@ class EmployeesController < ApplicationController
   def update
     respond_to do |format| 
       if @employee.update(employee_params) 
-        format.html { redirect_to employees_url, info: 'Employee was successfully updated.' } 
+        format.html { redirect_to employees_url, notice: 'Employee was successfully updated.' } 
       else 
         format.html { render :edit } 
       end 

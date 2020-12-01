@@ -18,6 +18,9 @@
 <div class="container p-3 my-3 border">
     <%= form_with model: @employee do |form| %>
     <div class="form-group">
+      <div class="alert alert-primary" role="alert">
+        All fields are required
+      </div>
         <%= label_tag 'name', 'Name:'%>
         <%= form.text_field :name, class:'form-control'%>
     </div>
@@ -34,9 +37,16 @@
 
     <div class="form-group">
         <%= label_tag 'private_number', 'Private Number:'%>
+        <div class="alert alert-primary" role="alert">
+        Private Number should be:
+        <p class="mb-0">- Numeric</p>
+        <p class="mb-0">- 6 digits long</p>
+        <p class="mb-0">- Unique </div></p>
         <%= form.text_field :private_number, class:'form-control'%>
+        
     </div>
 
     <%= submit_tag "Add Employee", class:"btn btn-outline-success"%>
+    
     <% end %>
 </div>
