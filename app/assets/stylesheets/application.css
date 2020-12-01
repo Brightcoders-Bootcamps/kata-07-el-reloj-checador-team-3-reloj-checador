@@ -15,26 +15,26 @@
  */
 
 .alert-notice {
-    display: none;
+  display: none;
 }
 
 .alert-alert {
-    display: none;
+  display: none;
 }
 
 .notif {
-    position: absolute !important;
-    right: 1rem;
-    top: 1rem;
+  position: absolute !important;
+  right: 1rem;
+  top: 1rem;
 }
 
 #clock {
-    max-width: 256px;
-    max-height: 256px;
+  max-width: 256px;
+  max-height: 256px;
 }
 
 #error_explanation {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
