@@ -11,10 +11,9 @@
   </thead>
   <tbody>
     <% @reports.each do |report| %>
-      <% related_employee = Employee.find(report.employee_id) %>
       <tr>
-        <th scope="row"><%= related_employee.private_number %></th>
-        <td><%= related_employee.name %></td>
+        <th scope="row"><%= report.employee.private_number %></th>
+        <td><%= report.employee.name %></td>
         <td><%= report.check %></td>
         <td><%= report.created_at.strftime("%m/%d/%Y at %I:%M %p") %></td>
       </tr>
