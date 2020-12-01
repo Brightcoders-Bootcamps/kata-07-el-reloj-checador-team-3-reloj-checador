@@ -1,0 +1,5 @@
+class RemovePrivateNumberEmployees < ActiveRecord::Migration[6.0]
+  def change
+    remove_column :employees, :private_number
+   end
+end
